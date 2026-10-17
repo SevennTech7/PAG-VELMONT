@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080808">
+    <meta name="description" content="Acesse nossa chave Pix e realize seu pagamento com facilidade.">
+
+    <title>Pix | Pagamento</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="diamonds" aria-hidden="true"></canvas>
+    <div class="background-glow" aria-hidden="true"></div>
+
+    <main class="page-container">
+
+        <section class="payment-card">
+
+            <!-- ÁREA SUPERIOR -->
+            <div class="hero">
+
+                <div class="top-bar">
+                    <span class="brand-label">PAGAMENTO DIGITAL</span>
+
+                    <div class="status">
+                        <span class="status-dot"></span>
+                        PIX DISPONÍVEL
+                    </div>
+                </div>
+
+                <!-- LOGO: coloque seu arquivo logo.png na mesma pasta -->
+                <div class="logo-container">
+                    <img
+                        src="logo.png"
+                        alt="Logo da empresa"
+                        class="company-logo"
+                        onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex';"
+                    >
+
+                </div>
+
+                <div class="hero-copy">
+                    <span class="eyebrow">SIMPLES. SEGURO. INSTANTÂNEO.</span>
+
+                    <h1>O seu pagamento,<br>do seu jeito<span>.</span></h1>
+
+                    <p>
+                        Uma nova experiência para realizar
+                        seus pagamentos com praticidade.
+                    </p>
+                </div>
+
+                <div class="diamond-decoration" aria-hidden="true">
+                    <svg viewBox="0 0 100 100" fill="none">
+                        <path d="M20 35 L35 15 H65 L80 35 L50 85 Z"
+                              stroke="currentColor" stroke-width="1.2"/>
+                        <path d="M20 35 H80 M35 15 L42 35 L50 85 L58 35 L65 15"
+                              stroke="currentColor" stroke-width="1"/>
+                    </svg>
+                </div>
+
+                <div class="hero-footer">
+                    <span>EXPERIÊNCIA EXCLUSIVA</span>
+                    <span>01 / 01</span>
+                </div>
+
+            </div>
+
+            <!-- ÁREA INFERIOR -->
+            <div class="payment-content">
+
+                <div class="section-heading">
+                    <span class="section-number">01</span>
+
+                    <div>
+                        <span class="eyebrow">ÁREA DE PAGAMENTO</span>
+                        <h2>Faça seu Pix.</h2>
+                    </div>
+                </div>
+
+                <p class="instruction">
+                    Copie a chave abaixo e cole no aplicativo
+                    do seu banco para realizar o pagamento.
+                </p>
+
+                <div class="pix-box">
+
+                    <div class="pix-icon">
+                        <svg viewBox="0 0 32 32" fill="none">
+                            <path d="M11 5L16 10L21 5L27 11L22 16L27 21L21 27L16 22L11 27L5 21L10 16L5 11Z"
+                                  stroke="currentColor"
+                                  stroke-width="1.5"
+                                  stroke-linejoin="round"/>
+                            <path d="M12 12L20 20M20 12L12 20"
+                                  stroke="currentColor"
+                                  stroke-width="1.5"/>
+                        </svg>
+                    </div>
+
+                    <div class="pix-info">
+                        <span class="pix-label">CHAVE PIX</span>
+                        <p id="pix-display">Configure sua chave Pix</p>
+                    </div>
+
+                    <span class="copy-indicator" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <rect x="8" y="8" width="12" height="12" rx="2"
+                                  stroke="currentColor" stroke-width="1.6"/>
+                            <path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4H5.5A1.5 1.5 0 0 0 4 5.5V14.5A1.5 1.5 0 0 0 5.5 16H8"
+                                  stroke="currentColor" stroke-width="1.6"/>
+                        </svg>
+                    </span>
+
+                </div>
+
+                <button class="copy-button" id="copy-button" type="button">
+                    <span id="button-text">COPIAR CHAVE PIX</span>
+
+                    <svg id="button-icon" viewBox="0 0 24 24" fill="none">
+                        <rect x="8" y="8" width="12" height="12" rx="2"
+                              stroke="currentColor" stroke-width="1.7"/>
+                        <path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4H5.5A1.5 1.5 0 0 0 4 5.5V14.5A1.5 1.5 0 0 0 5.5 16H8"
+                              stroke="currentColor" stroke-width="1.7"/>
+                    </svg>
+                </button>
+
+                <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+
+                <div class="security-note">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3L20 6V11C20 16 16.5 19.5 12 21C7.5 19.5 4 16 4 11V6L12 3Z"
+                              stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M9 12L11 14L15 10"
+                              stroke="currentColor" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
+                    <span>Confira os dados do destinatário antes de confirmar.</span>
+                </div>
+
+                <footer class="footer">
+                    <span>© <span id="year"></span> <span id="footer-name">SUA EMPRESA</span></span>
+                    <span>FEITO PARA SIMPLIFICAR.</span>
+                </footer>
+
+            </div>
+
+        </section>
+
+        <div class="outside-caption">
+            <span class="caption-line"></span>
+            <span>UMA NOVA FORMA DE PAGAR</span>
+            <span class="caption-line"></span>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
